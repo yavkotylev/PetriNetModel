@@ -1,0 +1,98 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package protobuf;
+
+
+message Run {
+  optional string name = 1;
+  optional string id = 2;
+  Net net = 3;
+  repeated Trace traces = 4;
+}
+
+message Net {
+  optional string netName = 1;
+  SystemNet systemNet = 2;
+  repeated AgentType agentTypes = 3;
+}
+
+message SystemNet {
+  repeated SystemPlace places = 1;
+  repeated Transition transitions = 3;
+  repeated Arc arcs = 4;
+}
+
+message AgentType {
+  string typeName = 1;
+  string id = 2;
+  string startSystemPlaceId = 3;
+  string startPlaceId = 4;
+  repeated AgentPlace places = 5;
+  repeated Transition transitions = 6;
+  repeated Arc arcs = 7;
+}
+
+message AgentPlace {
+  string id = 1;
+  string label = 2;
+}
+
+message SystemPlace {
+  string id = 1;
+  string label = 2;
+  string agentTypeId = 3;
+}
+
+message Transition {
+  string id = 1;
+  string label = 2;
+  string activity = 3;
+  optional string sync = 4;
+}
+
+message Arc {
+  string id = 1;
+  optional string label = 2;
+  string sourceId = 3;
+  string targetId = 4;
+}
+
+
+message Trace {
+  string id = 1;
+  string label = 2;
+  repeated AgentTrace agentTraces = 3;
+  SystemTrace systemTrace = 4;
+}
+
+message AgentTrace {
+  string id = 1;
+  string agentId = 3;
+  repeated Fire path = 4;
+  repeated Statistic localStatistics = 5;
+}
+
+message SystemTrace {
+  string id = 1;
+  optional string label = 2;
+  string agentId = 3;
+  repeated Fire path = 4;
+  repeated Statistic localStatistics = 5;
+}
+
+message Statistic {
+  string label = 1;
+  int32 c = 2;
+  int32 p = 3;
+  int32 m = 4;
+  int32 r = 5;
+}
+
+message Fire{
+  string placeIdFrom = 1;
+  string transitionId = 2;
+  string placeIdTo = 3;
+}
+
