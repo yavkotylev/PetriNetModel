@@ -1,0 +1,189 @@
+{
+  "net": {
+    "systemNet": {
+      "places": [
+        {
+          "id": "p1",
+          "label": "111111111p1",
+          "agentTypeId": "testSystemAgentTypeId"
+        },
+        {
+          "id": "p2",
+          "label": "testSystemPlaceLabel_p2",
+          "agentTypeId": "testSystemAgentTypeId"
+        },
+        {
+          "id": "p3",
+          "label": "testSystemPlaceLabel_p3",
+          "agentTypeId": "testSystemAgentTypeId"
+        }
+      ],
+      "startPlaceId": "p1",
+      "transitions": [
+        {
+          "id": "t1",
+          "label": "testSystemTrLabel_t1",
+          "activity": "testActivity",
+          "sync": "testSync_t1"
+        },
+        {
+          "id": "t2",
+          "label": "testSystemTrLabel_t2",
+          "activity": "testActivity",
+          "sync": "testSync_t2"
+        },
+        {
+          "id": "t3",
+          "label": "testSystemTrLabel_t3",
+          "activity": "testActivity",
+          "sync": "testSync_t3"
+        }
+      ],
+      "arcs": [
+        {
+          "id": "arcx 1",
+          "label": "testArcLabel",
+          "sourceId": "t1",
+          "targetId": "p2"
+        },
+        {
+          "id": "arcx 0",
+          "label": "testArcLabel",
+          "sourceId": "p1",
+          "targetId": "t1"
+        },
+        {
+          "id": "arcx 3",
+          "label": "testArcLabel",
+          "sourceId": "t2",
+          "targetId": "p2"
+        },
+        {
+          "id": "arcx 2",
+          "label": "testArcLabel",
+          "sourceId": "p2",
+          "targetId": "t2"
+        },
+        {
+          "id": "arcx 5",
+          "label": "testArcLabel",
+          "sourceId": "t3",
+          "targetId": "p3"
+        },
+        {
+          "id": "arcx 4",
+          "label": "testArcLabel",
+          "sourceId": "p2",
+          "targetId": "t3"
+        }
+      ]
+    },
+    "agentTypes": [
+      {
+        "typeName": "type_A",
+        "id": "A",
+        "places": [
+          {
+            "id": "s3",
+            "label": "testSystemPlaceLabel_s3"
+          },
+          {
+            "id": "s1",
+            "label": "testSystemPlaceLabel_s1"
+          },
+          {
+            "id": "s4",
+            "label": "testSystemPlaceLabel_s4"
+          },
+          {
+            "id": "s2",
+            "label": "testSystemPlaceLabel_s2"
+          }
+        ],
+        "startPlaceId": "s1",
+        "transitions": [
+          {
+            "id": "u1",
+            "label": "testSystemTrLabel_u1",
+            "activity": "testActivity",
+            "sync": "testSync_u1"
+          },
+          {
+            "id": "u2",
+            "label": "testSystemTrLabel_u2",
+            "activity": "testActivity",
+            "sync": "testSync_u2"
+          },
+          {
+            "id": "u3",
+            "label": "testSystemTrLabel_u3",
+            "activity": "testActivity",
+            "sync": "testSync_u3"
+          }
+        ],
+        "arcs": [
+          {
+            "id": "arclab 2",
+            "label": "testArcLabel",
+            "sourceId": "s2",
+            "targetId": "u2"
+          },
+          {
+            "id": "arclab 1",
+            "label": "testArcLabel",
+            "sourceId": "u1",
+            "targetId": "s2"
+          },
+          {
+            "id": "arclab 0",
+            "label": "testArcLabel",
+            "sourceId": "s1",
+            "targetId": "u1"
+          },
+          {
+            "id": "arclab 5",
+            "label": "testArcLabel",
+            "sourceId": "u3",
+            "targetId": "s4"
+          },
+          {
+            "id": "arclab 4",
+            "label": "testArcLabel",
+            "sourceId": "s3",
+            "targetId": "u3"
+          },
+          {
+            "id": "arclab 3",
+            "label": "testArcLabel",
+            "sourceId": "u2",
+            "targetId": "s3"
+          }
+        ]
+      }
+    ]
+  },
+  "traces": [
+    {
+      "id": "testId_trace1",
+      "label": "trace1",
+      "agentTraces": [
+        {
+          "id": "agentTraceId_"
+        }
+      ],
+      "systemTrace": {
+      }
+    },
+    {
+      "id": "testId_trace2",
+      "label": "trace2",
+      "agentTraces": [
+        {
+          "id": "agentTraceId_"
+        }
+      ],
+      "systemTrace": {
+      }
+    }
+  ]
+}
